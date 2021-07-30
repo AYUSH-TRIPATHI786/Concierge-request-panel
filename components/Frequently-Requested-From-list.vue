@@ -1,6 +1,6 @@
 <template>
     <v-row
-        class =  'pl-3 pr-3 justify-space-between '
+        class =  'pl-3 pr-3 d-block d-sm-flex justify-space-between '
 
     >
         
@@ -51,10 +51,10 @@
                     <v-row
                         v-for="unit in room.units"
                         :key=unit.unitId
-                        class='units '
+                        class='units font-weight-regular'
                     >
                         <v-col 
-                        class='d-flex flex-row justify-center font-weight-regular'
+                        class='d-flex flex-row justify-center '
                         v-text='unit.unitName' 
                         >
                         </v-col>

@@ -12,23 +12,22 @@
               mdi-menu-down
             </v-icon>
           </template>
-        <div>
-        <span class='black--text '>{{item.serviceName}}</span>
-        <v-chip
-          color=#E2E9F9
-          label
-          :text-color=color
-          large
-
-        >
-          {{item.requestCount}} times Requested 
-        </v-chip>
+        <div class=' d-flex flex-column flex-sm-row align-baseline'>
+          <span class='black--text mb-1'>{{item.serviceName}}</span>
+          <v-chip
+            color=#E2E9F9
+            :text-color=color
+            :small='$vuetify.breakpoint.xs'
+            label
+          >
+            <div >{{item.requestCount}} times Requested</div> 
+          </v-chip>
         </div>
         <div class = 'text-right '>
-        <span class='expansion-header'  > View top and least performing staff</span>
+        <span class='expansion-header d-none d-sm-flex flex-row-reverse'  > View top and least performing staff</span>
         </div>
       </v-expansion-panel-header>
-      <v-expansion-panel-content>
+      <v-expansion-panel-content color="#F8F9FD">
         <Most-requested-services-detail/>
       </v-expansion-panel-content>
     </v-expansion-panel>
@@ -42,6 +41,7 @@ export default {
   data(){
     return {
           color:   '#4F78DA',
+          large: true,
           items:[   
 
             {

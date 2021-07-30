@@ -1,15 +1,16 @@
 <template>
-    <v-sheet color="#F8F9FD">
-    <v-container class='content'>
-        <v-row>
-            <v-col>    Top Performing Skills</v-col>
-            <v-col>    Least Performing Skills</v-col>  
-        </v-row>
-        <v-row>
-            <v-col>
+    <div>
+        <v-row class='mt-3'>
+            <v-col class='col-12 col-sm-6'>
+                <v-container>
+                    <v-row >Top Performing Skills</v-row>
+                </v-container>
                 <Performing-staff-list :staffsList='topPerformingStaffs' />
             </v-col>
-            <v-col>
+            <v-col class='col-12 col-sm-6' >
+                <v-container>
+                    <v-row >Least Performing Skills</v-row>
+                </v-container>
                 <Performing-staff-list :staffsList='leastPerformingStaffs' />
             </v-col>  
         </v-row>
@@ -17,8 +18,7 @@
             <v-col>Frequently Requested From</v-col>
         </v-row>
         <Frequently-requested-from-list :frequentlyRequestedFrom="frequentlyRequestedFrom"/>
-    </v-container>
-    </v-sheet>
+    </div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
-    <v-container class='white font-weight-regular'>
-        <v-row class='table-header'>
+    <v-card flat class='white font-weight-regular'>
+    <v-container >
+        <v-row class='table-header text-no-wrap'>
             <v-col>
                 Name
             </v-col>
@@ -20,6 +21,7 @@
             <v-col v-text="staff.avgTat">            </v-col>
         </v-row>
     </v-container>
+    </v-card>
 </template>
 
 <script>
