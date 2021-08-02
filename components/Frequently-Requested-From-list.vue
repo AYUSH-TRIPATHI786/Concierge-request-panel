@@ -1,21 +1,22 @@
 <template>
     <v-row
-        class =  'pl-3 pr-3 d-block d-sm-flex justify-space-between '
+        class =  'pl-3 pr-3   d-block d-sm-flex  justify-space-between '
 
     >
         
         <v-menu
-        v-for="room in frequentlyRequestedFrom"
+        v-for="(room) in frequentlyRequestedFrom"
         :key = room.roomId
         open-on-hover
         min-width="200px"
         nudge-right="82px"        
         > 
             <template v-slot:activator="{ on, attrs }">  
+            <v-col class='col-4'>
             <v-card
                 v-bind="attrs"
                 v-on='on'
-                class=' mb-3 pl-4 d-flex align-center'
+                :class= "'mb-3 pl-4 d-flex align-center col-4' "
                 id='request-card'
                 min-width=308px
             >
@@ -37,6 +38,7 @@
                 <v-card-subtitle class='roomname '  v-text="room.roomName"></v-card-subtitle>
                 </div>
             </v-card>
+            </v-col>
             </template>
 
             <v-card >
@@ -77,14 +79,25 @@
 
                 </v-container>
             </v-card>
+            
         </v-menu>
+        <v-col>
+            
+        </v-col>
     </v-row>
 </template>
 <script>
 export default {
     props:{
         frequentlyRequestedFrom:Array
+    },
+    methods:{
+        request_card_classes(){
+            let classes =  "";
+            (index===frequentlyRequestedFrom.length-2 && 'mr-auto')
+        }
     }
+
 }
 </script>
 

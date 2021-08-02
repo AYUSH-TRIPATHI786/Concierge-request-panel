@@ -102,9 +102,7 @@ export default {
   color:#4F78DA;
 }
 
-.chip{
-  font-size: 8px;
-}
+
 </style>
 
 <style lang="scss" scoped>
@@ -115,6 +113,9 @@ export default {
     }
     .v-expansion-panel-header{
       font-size:10px;
+    }
+    .chip{
+      font-size: 8px;
     }
     
   }
