@@ -15,26 +15,26 @@
             <v-card
                 v-bind="attrs"
                 v-on='on'
-                class='mb-3 pl-4 d-flex align-center'
+                class=' mb-3 pl-4 d-flex align-center'
+                id='request-card'
                 min-width=308px
-
             >
                 <v-avatar
                     tile
                     color='#71DDC9'
                     v-text='room.percentage+"%"'  
-                    class='white--text font18 font-weight-bold'
+                    class='white--text per-avatar font-weight-bold'
 
                 >
                 </v-avatar>
                 <div>
                 <v-card-title 
-                class='d-flex font18 weight600'
+                class='d-flex card-head weight600'
                 v-text='room.requestCount+"Requests"' 
                 >
                 </v-card-title>
                 
-                <v-card-subtitle class='roomname' v-text="room.roomName"></v-card-subtitle>
+                <v-card-subtitle class='roomname '  v-text="room.roomName"></v-card-subtitle>
                 </div>
             </v-card>
             </template>
@@ -89,16 +89,22 @@ export default {
 </script>
 
 <style  scoped>
+
 .weight600{
 font-weight: 600;
 }
 
-.font18{
+.card-head{
+font-size:18px;
+}
+
+.per-avatar{
 font-size:18px;
 }
 
 .roomname{
 color:#707070;
+font-size:16px;
 }
 
 .heading{
@@ -107,4 +113,25 @@ color:#707070;
 .units{
 font-size: 14px;
 }
+
+#request-card{
+box-shadow: 0px 16px 25px 2px rgba(39, 83, 187, 0.02);
+}
+</style>
+
+<style lang="scss" scoped>
+    @import '~vuetify/src/styles/styles.sass';
+    @media #{map-get($display-breakpoints, 'xs-only')}{
+        .card-head{
+        font-size:12px;
+        line-height: 16px;
+        }
+        .roomname{
+        font-size:10px;
+        line-height: 14px;
+        }
+        .per-avatar{
+        font-size:14px;
+        }
+    }
 </style>

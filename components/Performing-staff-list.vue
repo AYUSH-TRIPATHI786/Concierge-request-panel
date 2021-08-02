@@ -1,8 +1,8 @@
 <template>
     <v-card flat class='white font-weight-regular'>
     <v-container >
-        <v-row class='table-header text-no-wrap'>
-            <v-col>
+        <v-row class='tableheader text-no-wrap '>
+            <v-col v-text='"Name"'>
                 Name
             </v-col>
             <v-col>
@@ -15,6 +15,7 @@
         <v-row 
             v-for="staff in staffsList"
             :key = staff.id
+            class='tabelcontent'
         >
             <v-col v-text='staff.name'>            </v-col>
             <v-col v-text='staff.requestCount'>            </v-col>
@@ -32,7 +33,21 @@ export default {
 }
 </script>
 <style scoped>
-.table-header{
+.tableheader{
     color:#6D6D6D;
+    font-size:12px;
 }
+.table-content{
+    font-size:14px
+}
+
 </style>
+<style lang="scss" scoped>
+    @import '~vuetify/src/styles/styles.sass';
+    @media #{map-get($display-breakpoints, 'xs-only')}{
+        .tableheader{
+        font-size:8px;
+        }
+    }
+</style>
+

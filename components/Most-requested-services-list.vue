@@ -13,14 +13,15 @@
             </v-icon>
           </template>
         <div class=' d-flex flex-column flex-sm-row align-baseline'>
-          <span class='black--text mb-1'>{{item.serviceName}}</span>
+          <span class='mb-1 mr-1 ' >{{item.serviceName}}</span>
           <v-chip
             color=#E2E9F9
             :text-color=color
-            :small='$vuetify.breakpoint.xs'
+            :x-small='$vuetify.breakpoint.xs'
             label
+            class=''
           >
-            <div >{{item.requestCount}} times Requested</div> 
+            <div class='chip'>{{item.requestCount}} times Requested</div> 
           </v-chip>
         </div>
         <div class = 'text-right '>
@@ -100,5 +101,22 @@ export default {
 .expansion-header {
   color:#4F78DA;
 }
+
+.chip{
+  font-size: 8px;
+}
+</style>
+
+<style lang="scss" scoped>
+  @import '~vuetify/src/styles/styles.sass';
+  @media #{map-get($display-breakpoints, 'xs-only')}{
+    .v-expansion-panel{
+      font-size:10px;
+    }
+    .v-expansion-panel-header{
+      font-size:10px;
+    }
+    
+  }
 
 </style>
