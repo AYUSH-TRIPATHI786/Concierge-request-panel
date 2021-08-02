@@ -56,7 +56,7 @@
                         class='units font-weight-regular'
                     >
                         <v-col 
-                        class='d-flex flex-row justify-center '
+                        class='ml-4  '
                         v-text='unit.unitName' 
                         >
                         </v-col>
@@ -69,7 +69,7 @@
                     <v-divider class='ma-3 '></v-divider>
                     <v-row 
                     >
-                        <v-col  class='d-flex flex-row justify-center'>Total</v-col>
+                        <v-col  class='ml-4'>Total</v-col>
                         <v-col >
                             {{room.requestCount}}
                         </v-col>
