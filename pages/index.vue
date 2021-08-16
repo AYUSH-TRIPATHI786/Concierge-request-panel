@@ -1,3 +1,4 @@
 <template>
-  <Most-requested-services-list/>
+  <!-- <communication-report v-if="false"/> -->
+  <mobile-button/>
 </template>
