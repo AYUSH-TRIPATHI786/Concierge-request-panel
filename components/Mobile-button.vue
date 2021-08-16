@@ -12,13 +12,13 @@
 
     <v-btn
       color="primary"
-      :class="button_size"
-      :bottom="bottom"
-      :fixed="mobilefocused"
+      :class="isbuttonsticky || 'mx-4'"
+      :bottom="isbuttonsticky"
+      :fixed="isbuttonsticky"
+      :min-width="isbuttonsticky ? '100%' : none "
       max-width="100%"
-      :min-width="minwidth"
     >
-      <div class="font-weight-bold font-14">Create Request</div>
+      <div class="font-weight-bold font-14" v-text="'Create Request'"></div>
     </v-btn>
   </div>
 </template>
@@ -26,33 +26,25 @@
 export default {
   data() {
     return {
-      mobilefocused: false,
-      button_size: "mx-4 pa-2 ",
-      bottom: false,
-      minwidth: "1%"
+      isbuttonsticky:false,
     };
   },
   methods: {
     input() {
       if (this.$vuetify.breakpoint.xs) {
-        this.button_size = this.button_size.substring(4);
-        this.mobilefocused = true;
-        this.bottom = true;
-        this.minwidth = "100%";
+        this.isbuttonsticky=true
       }
     },
     reset() {
-      this.button_size = "mx-4 pa-2";
-      this.mobilefocused = false;
-      this.bottom = false;
-      this.minwidth = "1%";
+      this.isbuttonsticky=false
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.font-14 {
+.font-14{
   font-size: 14px;
+  text-transform:none;
 }
 </style>
