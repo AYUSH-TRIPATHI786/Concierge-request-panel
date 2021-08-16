@@ -25,11 +25,7 @@
     <v-app-bar></v-app-bar>
     
     <v-main >
-      <v-sheet color="#E5E5E5">
-      <v-container>
         <Nuxt />
-      </v-container>
-      </v-sheet>
     </v-main>
     
   </v-app>
@@ -59,3 +55,4 @@ export default {
   }
 }
 </script>
+
