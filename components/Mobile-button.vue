@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex flex-column ">
-    <v-card min-height="600px" class="ma-4 pa-2 ">
+  <div class="d-flex flex-column stickybutton-container">
+    <v-card min-height="600px" class="mx-4 pa-2 ">
       <v-card-text>
         <v-text-field
           label=" input"
@@ -12,10 +12,10 @@
 
     <v-btn
       color="primary"
-      :class="isbuttonsticky || 'mx-4'"
-      :bottom="isbuttonsticky"
+      :class="isbuttonsticky && 'justify-end' || 'ma-4'"
       :fixed="isbuttonsticky"
       :min-width="isbuttonsticky ? '100%' : '1%' "
+      :tile='isbuttonsticky'
       max-width="100%"
     >
       <div class="font-weight-bold font-14" v-text="'Create Request'"></div>
@@ -43,8 +43,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.font-14{
-  font-size: 14px;
-  text-transform:none;
+.stickybutton-container{
+  .v-btn{
+    bottom:0px;
+    .font-14{
+      font-size: 14px;
+      text-transform:none;
+    }
+  }
 }
 </style>
