@@ -15,7 +15,7 @@
       :class="isbuttonsticky || 'mx-4'"
       :bottom="isbuttonsticky"
       :fixed="isbuttonsticky"
-      :min-width="isbuttonsticky ? '100%' : none "
+      :min-width="isbuttonsticky ? '100%' : '1%' "
       max-width="100%"
     >
       <div class="font-weight-bold font-14" v-text="'Create Request'"></div>
